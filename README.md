@@ -61,7 +61,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|
-|tweet_id||integer|
+|tweet_id|integer|
 |text|text|
 
 ### Association
@@ -74,7 +74,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|
-|tweet_id||integer|
+|tweet_id|integer|
 
 ### Association
 - belongs_to :user
