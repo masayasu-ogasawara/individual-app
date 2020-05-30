@@ -24,13 +24,12 @@ Things you may want to cover:
 * ...
 
 ## users table
-
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |email|string|null: false, unique: true, index: true|
 |password|string|null: false|
-|re_password|string|null: false|
+|encrypted_password|string|null: false|
 |first_name|string|null: false|
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
@@ -40,57 +39,41 @@ Things you may want to cover:
 ### Association
 - has_many :games
 - has_many :comments
-- has_many :favorites
+
 
 
 ## games table
-
 |Column|Type|Options|
 |------|----|-------|
 |user|references| null: false, foreign_key: true;|
-|name|string|
-|text|text|
+|name|string| null: false|
+|introduction|text| null: false|
 
 ### Association
 - belongs_to :user
 - has_many :comments
-- has_many :favorites
+- has_many :images
+
+
 
 ## images table
-
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer| null: false, foreign_key: true;|
-|name|string|
-|text|text|
+|game|references| null: false, foreign_key: true;|
 |url|string|
 
 ### Association
-- belongs_to :user
-- has_many :comments
-- has_many :favorites
+- belongs_to :game
+
+
 
 ## comments table
-
 |Column|Type|Options|
 |------|----|-------|
-|user|references|
-|game|references|
-|text|text|
+|user|references| null: false, foreign_key: true;|
+|game|references| null: false, foreign_key: true;|
+|text|text| null: false|
 
 ### Association
-- belongs_to :user
 - belongs_to :game
-- has_many :favorites
-
-## favorites table
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|
-|game_id|integer|
-
-### Association
 - belongs_to :user
-- belongs_to :game
-- belongs_to :comment
