@@ -1,0 +1,55 @@
+= render 'games/header'
+
+.main
+  .showMain
+    .contentLeftqq
+    .contentRight
+      .topContent
+        .itemBox
+          %h2.itemBox__name
+            = @game.name
+          .itemBox__body
+            %ul
+              - @game.images.each do |image|
+                = image_tag image.url.url,class: "img_show"
+              %li 
+          .itemDetail 
+            投稿者：
+            = @game.user.name
+          .table
+            %table
+              %tbody
+                %tr
+                  %th 投稿内容
+                  %td 
+                    = @game.introduction
+          .optionalArea
+            %ul
+              %li#likebtn.optionalBtn.likeBtn
+                %i.fa.fa-star お気に入り0
+        .commentBox
+          - if current_user
+            = form_with(model: [@game, @comment] ,class:"new_comment", local: true) do |f|
+              = f.text_area :text, placeholder: "コメントする", rows: "5",required: ""
+              = f.submit "コメントする", class: "commentBtn"
+          - else
+            %strong
+              %p.annotation ⚠️コメントの投稿には新規会員登録/ログインが必要です⚠️
+        .commentsBox
+          %h4 ＜コメント一覧＞
+          - if @comments
+            - @comments.each do |comment|
+              %p
+                %strong= link_to comment.user.name, "/#/#{comment.user_id}"
+                .comment= comment.text
+      %ul.links
+        %li 
+          = link_to "/" do
+            %i.fa.fa-angle-left
+            %span 前の商品
+        %li 
+          = link_to "/" do
+            %span 後ろの商品
+            %i.fa.fa-angle-right
+
+= render 'footer'

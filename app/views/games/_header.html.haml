@@ -1,0 +1,30 @@
+.headder
+  .headder__inner
+    .headder__main
+      %h1.headder__icon
+        = link_to "/" do
+          = image_tag "logo.jpg", size: "", alt: "test1", class:"logo-img"
+      %ul.headder__nav-listsright
+        -if user_signed_in?
+          %li.headder__nav-listsright-loginitem
+            = link_to destroy_user_session_path, method: :delete,id:'catBtn' do
+              = image_tag "logout.jpg", size: "40x40", alt: "test1"
+              ログアウト
+          %li.headder__nav-listsright-loginitem
+            = link_to root_path class:"catBtn" do
+              = image_tag "member_photo_noimage_thumb.png", size: "40x40", alt: "test1"
+              = current_user.name
+            %ul.headder__nav-listsright-brandsPulldown
+          -# %li.headder__nav-listsright-newitem
+          -#   = link_to user_path(current_user.id),id:'catBtn' do
+          -#     マイページ
+        -else
+          %li.headder__nav-listsright-loginitem
+            = link_to user_session_path,id:'catBtn' do
+              = image_tag "login.jpg", size: "50x50", alt: "test1"
+              ログイン
+            %ul.headder__nav-listsright-brandsPulldown
+          %li.headder__nav-listsright-newitem
+            = link_to new_user_registration_path,id:'catBtn' do
+              = image_tag "new_user.jpg", size: "40x40", alt: "test1"
+              新規会員登録

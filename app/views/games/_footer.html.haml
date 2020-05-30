@@ -1,0 +1,48 @@
+.footer
+  %ul.footer__contents
+    %li.footer__content
+      %h2.footer__content-head
+        TV GAMEについて
+      %ul
+        %li
+          = link_to "/" do
+            会社概要（運営会社）
+        %li
+          = link_to "/" do
+            プライバシーポリシー
+        %li
+          = link_to "/" do
+            TV GAME利用規約
+    %li.footer__content
+      %h2.footer__content-head
+        TV GAMEを見る
+      %ul
+        %li
+          = link_to "/" do
+            メーカー一覧
+        %li
+          = link_to "/" do
+            シリーズ一覧
+    %li.footer__content
+      %h2.footer__content-head
+        ヘルプ＆ガイド
+      %ul
+        %li
+          = link_to "/" do
+            TV GAMEガイド
+        %li
+          = link_to "/" do
+            TV GAMEロゴ利用ガイドライン
+        %li
+          = link_to "/" do
+            お知らせ
+  .footer__logo
+    = link_to "/" do
+      -# = image_tag "logo-white.png", size: "160x46", alt: "test1"
+  %p© TV GAME
+= link_to new_game_path, data: {turbolinks: false} do
+  .purchaseBtn
+    %span.purchaseBtn__text
+      投稿する
+    .purchaseBtn__icon
+      = image_tag "post.jpg", size: "54x54", alt: "test1"

@@ -1,0 +1,43 @@
+= render "header"
+.main
+  %section.main__visual
+    .main__visual-content
+      %h2.main__visual-content-subtitle
+        %br
+        おもしろい
+        %span.game ゲーム
+        を
+        %span.search 探そう
+      %p.main__visual-content-text
+        ゲームを探して、遊んで、周りのみんなにすすめよう！
+  %section.main__topkey
+    %h2.main__topkey-head
+      このサイトの概要
+    .main__topkey-items
+      .main__topkey-item
+        %h3.main__topkey-item-subtitle
+          投稿者の口コミを見よう
+        %p.main__topkey-item-detail
+          気になるゲームの口コミを見て参考にできます
+        = image_tag "reviews_pc.jpg"
+      .main__topkey-item
+        %h3.main__topkey-item-subtitle
+          実際に遊んでみよう
+        %p.main__topkey-item-detail
+          気になったゲームを実際に購入して遊んでみよう
+        = image_tag "play_game.jpg"
+      .main__topkey-item
+        %h3.main__topkey-item-subtitle
+          みんなにゲームの面白さを伝えよう
+        %p.main__topkey-item-detail
+          自分が遊んで面白かったゲームを投稿して、みんなにお勧めすることができます
+        = image_tag "spread.jpg"
+  %section.main__pickupconteiner
+    %h2.main__pickupconteiner-head
+      投稿一覧
+    .main__pickupconteiner-productbox
+      .main__pickupconteiner-producthead
+      .main__pickupconteiner-productlists
+        = render partial: 'product', collection: @newgames
+  = paginate @newgames
+  = render "footer"

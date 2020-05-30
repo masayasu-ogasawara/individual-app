@@ -1,0 +1,24 @@
+.single-container
+  //header部分
+  = render "layouts/game-header"
+  .l-single-main
+    .l-single-main__login-panel
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .l-single-main__login-panel__login-no-account
+          %p アカウントをお持ちでない方はこちら
+          = link_to new_user_registration_path do
+            新規会員登録
+        .l-single-main__login-panel__login-form-inner
+          .form-group-login
+            .field
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-group-login__login-input", placeholder: "メールアドレス"
+              %br/
+          .form-group-login
+            .field
+              = f.password_field :password, autocomplete: "current-password", class: "form-group-login__login-input", placeholder: "パスワード"
+              %br/
+          .actions
+            = f.submit "ログイン", class: 'btn btn-default', class: 'l-single-main__login-panel__login-form-inner__login-submit'
+            =link_to "パスワードをお忘れの方", "#", class: "password-forgot"
+  //footer部分
+  = render "layouts/game-footer"

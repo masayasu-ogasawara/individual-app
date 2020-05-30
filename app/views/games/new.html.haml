@@ -1,0 +1,58 @@
+.sell
+  %header.sell-header
+  = render "layouts/game-header"
+
+  %main.sell-main
+    %section.sell-container
+      = form_with model: @game,local: true do |f|
+        = render 'layouts/error_messages', model: f.object
+        -# 出品画像
+        .sell-container__content
+          .sell-title
+            %h3.sell-title__text
+              画像
+              %span.sell-title__require
+                必須
+            %p 10枚までアップロードできます
+            .post__drop__box__container
+              .prev-content
+              .label-content
+                %label{for: "game_images_attributes_0_image", class: "abel-box", id: "label-box--0"}
+                  %pre.label-box__text-visible クリックしてファイルをアップロード
+              .hidden-content
+
+                = f.fields_for :images do |i|
+                  = i.file_field :url, class: "hidden-field"
+                  %input{class:"hidden-field", type: "file", name: "game[images_attributes][1][url]", id: "game_images_attributes_1_url" }
+                  %input{class:"hidden-field", type: "file", name: "game[images_attributes][2][url]", id: "game_images_attributes_2_url" }
+                  %input{class:"hidden-field", type: "file", name: "game[images_attributes][3][url]", id: "game_images_attributes_3_url" }
+                  %input{class:"hidden-field", type: "file", name: "game[images_attributes][4][url]", id: "game_images_attributes_4_url" }
+          .error-messages#error-image
+
+        -#タイトル
+        .sell-container__content
+          .sell-title-name
+            %h3.sell-title__text
+              タイトル
+              %span.sell-title__require
+                必須
+          = f.text_field :name, {class:'sell-container__content__name',  placeholder: '40文字まで'}
+          .error-messages#error-name
+          .sell-title
+            %h3.sell-title__text
+              投稿内容
+              %span.sell-title__require
+                必須
+          = f.text_area :introduction,{class: 'sell-container__content__description', rows: '7', maxlength: '1000', placeholder: "ゲームの感想など（1,000文字以内)"}
+          .sell-container__content__word-count
+            %span#word-count
+              0
+            &#47;1000
+          .error-messages#error-text
+          -# 出品確定、戻るボタン
+          .submit-btn
+            = f.submit '投稿する', class: 'submit-btn__sell-btn'
+            = link_to 'もどる', root_path, class: 'submit-btn__return-btn'
+
+    %footer.sell-footer
+      = render "layouts/game-footer"

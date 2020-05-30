@@ -27,46 +27,60 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index: true, null: false, unique: true|
-|email|string|null: false, |
-|encrypted_password|string|null: false|
-|nickname|string|null: false|
-|profile|text|
-|icon_img|int|
-|heaer_img|int|
+|name|string|null: false|
+|email|string|null: false, unique: true, index: true|
+|password|string|null: false|
+|re_password|string|null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|birthday_date|date|null: false|
 
 ### Association
-- has_many :tweets
+- has_many :games
 - has_many :comments
 - has_many :favorites
 
 
-## tweets table
+## games table
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references| null: false, foreign_key: true;|
+|name|string|
+|text|text|
+
+### Association
+- belongs_to :user
+- has_many :comments
+- has_many :favorites
+
+## images table
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer| null: false, foreign_key: true;|
 |name|string|
 |text|text|
-|image|text|
+|url|string|
 
 ### Association
 - belongs_to :user
 - has_many :comments
 - has_many :favorites
 
-
 ## comments table
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|
-|tweet_id|integer|
+|user|references|
+|game|references|
 |text|text|
 
 ### Association
 - belongs_to :user
-- belongs_to :tweet
+- belongs_to :game
 - has_many :favorites
 
 ## favorites table
@@ -74,9 +88,9 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|
-|tweet_id|integer|
+|game_id|integer|
 
 ### Association
 - belongs_to :user
-- belongs_to :tweet
+- belongs_to :game
 - belongs_to :comment

@@ -1,0 +1,255 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+}
+
+.single-container {
+  min-width: 768px;
+}
+
+.single-main {
+  width: 700px;
+  margin: 0 auto;
+  background: #f5f5f5;
+  h2 {
+    padding: 16px;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .new_user {
+    padding: 40px 40px 64px;
+    border-top: 1px solid gray;
+  }
+  &__container {
+    max-width: 343px;
+    margin: 0 auto;
+  }
+  // ニックネーム
+  .form-group:first-child {
+    margin: 0;
+  }
+  // メールアドレス〜生年月日
+  .form-group{
+    margin-top: 32px;
+    & label{
+      font-weight: 600;
+    }
+  // 必須
+    &__require{
+      background: #ea352d;
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      vertical-align: top;
+    }
+  // 入力フォーム
+    &__input {
+      width: 100%;
+      margin: 8px 0 0;
+      height: 48px;
+      padding: 10px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 16px;
+      box-sizing: border-box;
+    // 名前入力フォーム
+      &--half {
+        width: calc(50% - 6px);
+        margin: 8px 0 0;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+    }
+    // ※ 英字と数字の両方を含めて設定してください
+    &__info {
+    margin: 8px 0 0;
+    line-height: 1.5;
+    color: #888;
+    }
+    // パスワードを表示する
+    .checkbox-default {
+      margin: 16px 0 0;
+      & label {
+        font-weight: 400;
+        cursor: pointer;
+      }
+    }
+    .select-wrap {
+      width: 76px;
+      margin: 8px 0 0;
+      display: inline-block;
+      // アイコン矢印
+      &__icon-arrow-bottom {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        z-index: 2;
+        color: #888;
+        font-size: 8px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+      }
+      &__default {
+        width: 100%;
+        padding: 0 10px;
+        position: relative;
+        z-index: 2;
+        height: 48px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+      }
+      span {
+        margin: 0 2px;
+      }
+    }
+    a {
+      color: #0099e8;
+      text-decoration: none;
+    }
+    &__text-center {
+      text-align: center;
+    }
+    // 新規会員登録
+    .btn-default {
+      background: linear-gradient(#05FBFF, #1E00FF);
+      color: #fff;
+      margin-top: 32px;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: 1px solid linear-gradient(#05FBFF, #1E00FF);
+      -webkit-transition: all ease-out .3s;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      text-align: center;
+    }
+    // 本人情報の登録について
+    &__text-right {
+      margin-top: 32px;
+      text-align: right;
+    }
+    // This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+    &__recaptcha_term {
+      margin-top: 32px;
+      background-color: #f5f5f5;
+      padding: 8px 16px;
+      color: #888888;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  }
+  .form-info-text {
+    color: #888;
+    margin: 8px 0 0;
+  }
+}
+// ログイン画面
+.l-single-main {
+  display: block;
+  &__login-panel {
+    max-width: none;
+    width: 456px;
+    margin: 0 auto;
+    background: #f5f5f5;
+    // padding-bottom: 80px;
+    &__login-no-account {
+      padding: 40px 64px;
+      text-align: center;
+      // アカウントをお持ちでない方はこちら
+      p {font-size: 14px;}
+      // 新規会員登録
+      a {display: block;
+        margin: 20px 0 0;
+        border: 1px solid linear-gradient(#05FBFF, #1E00FF);
+        background: linear-gradient(#05FBFF, #1E00FF);
+        color: #fff;
+        line-height: 40px;
+        text-decoration: none;}
+    }
+    &__login-form-inner {
+      padding: 24px 64px 32px;
+      border-top: 1px solid gray;
+      // メールアドレス ・パスワード部分
+      .form-group-login {
+        margin: 40px 0 0;
+      // メールアドレス・パスワード入力フォーム
+        &__login-input {
+          margin: 0;
+          width: 100%;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+      }
+      // ログイン
+      &__login-submit {
+        margin: 100px 0 0;
+        background: radial-gradient(#F2B9A1, #EA6264);
+        color: #fff;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+      }
+      // パスワードをお忘れの方
+      .password-forgot {
+        display: block;
+        margin: 40px 0 0;
+        color: #0099e8;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.form-group__birthday{
+  width: 100%;
+  margin-top: 8px;
+  #user_birthday_date_1i{
+    @include select;
+    width: 33%;
+  }
+  #user_birthday_date_2i{
+    @include select;
+    width: 32%;
+  }
+  #user_birthday_date_3i{
+    @include select;
+    width: 32%;
+  }
+}
