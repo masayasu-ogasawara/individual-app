@@ -11,7 +11,7 @@
               = image_tag "logout.jpg", size: "40x40", alt: "test1"
               ログアウト
           %li.headder__nav-listsright-loginitem
-            = link_to root_path class:"catBtn" do
+            = link_to root_path, class:"name" do
               = image_tag "member_photo_noimage_thumb.png", size: "40x40", alt: "test1"
               = current_user.name
             %ul.headder__nav-listsright-brandsPulldown
