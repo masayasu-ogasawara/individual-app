@@ -133,6 +133,9 @@ body{
             position: relative;
             text-align: center;
             display: block;
+            .img_show {
+              width: 100px;
+            }
             li{
               display: flex;
               flex-direction: column;
