@@ -1,28 +1,46 @@
-# README
+## アプリ名
+individual-app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+自分のプレイしたゲームの感想を投稿することができます。<br>
+他の方の投稿を参考にしたり、コメントで気になった点を聞くこともできます。<br>
+※投稿とコメントは新規会員登録/ログインをする必要があります。
 
-Things you may want to cover:
+## 本番環境
+AWS(EC2)
 
-* Ruby version
+## サーバー
+Nginx、Unicorn
 
-* System dependencies
+## 開発環境
+Rails、Mysql
 
-* Configuration
+## DEMO
+まずは必須事項を入力した上で、新規会員登録をお願いします。
+<a href="https://gyazo.com/a73316e24bdfd726253d2e6875809ab3"><img src="https://i.gyazo.com/a73316e24bdfd726253d2e6875809ab3.gif" alt="Image from Gyazo" width="1000"/></a>
 
-* Database creation
 
-* Database initialization
+登録後は、自動的にログイン状態になりますので、投稿/コメントが可能になります。
 
-* How to run the test suite
+投稿手順
+<a href="https://gyazo.com/56d919f77a1d35bba20e1f7e4085378e"><img src="https://i.gyazo.com/56d919f77a1d35bba20e1f7e4085378e.gif" alt="Image from Gyazo" width="1000"/></a>
 
-* Services (job queues, cache servers, search engines, etc.)
+コメント手順
+<a href="https://gyazo.com/e339a89830b23f8dedbde014161f7463"><img src="https://i.gyazo.com/e339a89830b23f8dedbde014161f7463.gif" alt="Image from Gyazo" width="1000"/></a>
 
-* Deployment instructions
+## 制作背景
+今まで学んできた、ユーザー管理機能や投稿機能などの知識をアウトプットするために制作しました。<br>
+内容について、自分はゲームが趣味なので、ゲームの口コミサイトにしました。
 
-* ...
+## 工夫したポイント
+①ビュー、モデル、コントローラーが多くなると管理が煩雑になってしまうため、予め全体の流れを設計書として
+起こしてから制作しました。<br>
+②投稿一覧の部分に`gem 'kaminari'`を使用しページネーションを実装しました。
 
+## 今後実装したい機能
+キーワード検索機能、いいね機能、コメント編集・削除機能、購入機能
+
+## DB設計
 ## users table
 |Column|Type|Options|
 |------|----|-------|
