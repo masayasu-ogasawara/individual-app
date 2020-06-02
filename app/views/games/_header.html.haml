@@ -11,7 +11,7 @@
               = image_tag "logout.jpg", size: "40x40", alt: "test1"
               ログアウト
           %li.headder__nav-listsright-loginitem
-            = link_to root_path, class:"name" do
+            = link_to root_path, id:'catBtn',class:"name" do
               = image_tag "member_photo_noimage_thumb.png", size: "40x40", alt: "test1"
               = current_user.name
             %ul.headder__nav-listsright-brandsPulldown
@@ -25,6 +25,6 @@
               ログイン
             %ul.headder__nav-listsright-brandsPulldown
           %li.headder__nav-listsright-newitem
-            = link_to new_user_registration_path,id:'catBtn' do
+            = link_to new_user_registration_path,id:'catBtn',class:"name" do
               = image_tag "new_user.jpg", size: "40x40", alt: "test1"
               新規会員登録
