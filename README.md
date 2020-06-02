@@ -52,6 +52,9 @@ Rails、Mysql
 ## 今後実装したい機能
 キーワード検索機能、いいね機能、コメント編集・削除機能、購入機能
 
+## 今後の課題
+javascriptの知識が定着していないので、javascriptを活用した実装を絡めていくこと
+
 ## DB設計
 ## users table
 |Column|Type|Options|
