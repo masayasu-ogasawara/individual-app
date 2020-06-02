@@ -22,7 +22,7 @@ Rails、Mysql
 
 登録後は、自動的にログイン状態になりますので、投稿/コメントが可能になります。
 
-投稿手順
+投稿手順(必須事項を入力した上で投稿してください)
 <a href="https://gyazo.com/56d919f77a1d35bba20e1f7e4085378e"><img src="https://i.gyazo.com/56d919f77a1d35bba20e1f7e4085378e.gif" alt="Image from Gyazo" width="1000"/></a>
 
 コメント手順
