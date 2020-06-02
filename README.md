@@ -7,7 +7,8 @@ individual-app
 ※投稿とコメントは新規会員登録/ログインをする必要があります。
 
 ## IPアドレス
-<a href="https://github.com/masayasu-ogasawara/individual-app/blob/master/54.199.44.57">54.199.44.57</a>
+<a href="54.199.44.57">54.199.44.57</a>
+[猫](54.199.44.57)
 
 ## 登録済みユーザー
 名前:投稿用アカウント<br>
