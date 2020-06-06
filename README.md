@@ -53,7 +53,7 @@ Ruby on Rails / Ruby / JavaScript / Haml / Sass / GitHub / Mysql
 キーワード検索機能、いいね機能、コメント編集・削除機能、購入機能
 
 ## 今後の課題
-JavaScriptの知識が定着していないので、javascriptを活用した実装を絡めていくこと
+JavaScriptの知識が定着していないので、JavaScriptを活用した実装を絡めていくこと
 
 ## DB設計
 ## users table
