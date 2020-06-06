@@ -22,10 +22,10 @@ individual-app
 AWS(EC2)
 
 ## サーバー
-Nginx、Unicorn
+Unicorn / Nginx
 
 ## 開発環境
-Rails、Mysql
+Ruby on Rails / Ruby / JavaScript / Haml / Sass / GitHub / Mysql
 
 ## DEMO
 まずは必須事項を入力した上で、新規会員登録をお願いします。
