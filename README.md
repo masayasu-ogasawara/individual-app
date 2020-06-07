@@ -50,7 +50,7 @@ Ruby on Rails / Ruby / JavaScript / Haml / Sass / GitHub / Mysql
 ②投稿一覧の部分に`gem 'kaminari'`を使用しページネーションを実装しました。
 
 ## 今後実装したい機能
-キーワード検索機能、いいね機能、コメント編集・削除機能、購入機能
+キーワード検索機能、いいね機能、コメント編集・削除機能
 
 ## 今後の課題
 JavaScriptの知識が定着していないので、JavaScriptを活用した実装を絡めていくこと
