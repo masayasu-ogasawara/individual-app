@@ -19,7 +19,7 @@ individual-app
 パスワード:bbbbbbb
 
 ## 本番環境
-AWS
+AWS(EC2)
 
 ## サーバー
 Unicorn / Nginx
