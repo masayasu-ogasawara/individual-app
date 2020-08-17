@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_113349) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "game_id", null: false
-    t.text "text", null: false
+    t.integer "delete_check", default: 0
+    t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_comments_on_game_id"
@@ -31,6 +32,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_113349) do
     t.bigint "user_id", null: false
     t.string "name", null: false
     t.text "introduction", null: false
+    t.string "post_id"
+    t.string "viewer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_games_on_user_id"

@@ -1,6 +1,6 @@
 .comment_user_name
   = comment.user.name
   -# コメントユーザーと出品者が同じ場合
-  - if comment.user ==  comment.game_id
-    .seller_display
+  - if comment.user ==  comment.game.user
+    .user_display
       投稿者

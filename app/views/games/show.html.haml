@@ -1,5 +1,44 @@
 = render 'games/header'
 
+-# .commentBox
+-#   .comment_list
+-#     - if user_signed_in?
+-#       - @commentALL.each do |comment|
+-#         - if comment.user_id == current_user.id   
+-#           .comment_Me.comment_one_block{data:{index: comment.id}}
+-#             - if comment.delete_check == 1   # 削除済の場合
+-#               .comment_content
+-#                 出品者によりこのコメントは削除されました。
+-#                 = render 'games/template_comment/comment_delete_restore_btn',comment: comment 
+-#     - else   # 削除されていない場合
+-#       .comment_content
+-#         = comment.comment
+-#           .comment_create_at
+-#             = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+-#           - if comment.game.user == current_user
+-#             .comment_delete.me_pre_delete{data:{index: comment.id}}
+-#               = link_to '削除する', comment_path(comment.id) ,method: :patch
+-#               = render 'games/template_comment/comment_name',comment: comment
+-#           - else 
+-#             .comment_Other.comment_one_block{data:{index: comment.id}}    
+-#               = render 'games/template_comment/comment_name',comment: comment               
+-#               - if comment.delete_check == 1   # 削除済の場合
+-#                 .comment_content_other
+-#                   出品者によりこのコメントは削除されました。
+-#                   = render 'games/template_comment/comment_delete_restore_btn',comment: comment               
+-#               - else    # 削除されていない場合
+-#                 .comment_content_other
+-#                   = comment.comment
+-#                   .comment_create_at
+-#                     = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+-#                   - if comment.game.user == current_user   # 出品者とログインユーザーが等しい場合
+-#                     .comment_delete.other_pre_delete{data:{index: comment.id}}     
+-#                       = link_to '削除する', comment_path(comment.id) ,method: :patch
+-# - if user_signed_in? 
+-#   = form_with model:@comment ,class:"new_comment", local: true do |f|
+-#     = f.text_area :comment,id: "comment_body",wrap: "soft"
+-#     = f.hidden_field :game_id, value: @game.id
+
 .main
   .showMain
     .contentLeftqq
@@ -29,7 +68,7 @@
                 %i.fa.fa-star お気に入り0
         .commentBox
           - if current_user
-            = form_with(model: [@game, @comment] ,class:"new_comment", local: true) do |f|
+            = form_with(model: [@game, @comment], local: true) do |f|
               = f.text_area :text, placeholder: "コメントする", rows: "5",required: ""
               = f.submit "コメントする", class: "commentBtn"
           - else
@@ -51,5 +90,14 @@
           = link_to "/" do
             %span 後ろの商品
             %i.fa.fa-angle-right
+
+%p.noticeMsg
+  相手のことを考えて丁寧なコメントをこころがけましょう。
+  %br/
+  不快な言葉遣いなどは利用制限や退会処分となることがあります。
+%br/
+%button.commentBtn{name: "button", type: "submit"}
+  %i.fa.fa-comment
+  コメントする
 
 = render 'footer'

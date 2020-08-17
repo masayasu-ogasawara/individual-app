@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, password_length: 7..128
 
   has_many :games, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   with_options presence: true do
     validates :name

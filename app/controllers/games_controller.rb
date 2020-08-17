@@ -14,16 +14,20 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create(game_params)
+    @game = Game.new(game_params)
+    @game.user_id = current_user.id
     if @game.save
+      redirect_to root_path
     else
       redirect_to new_game_path
     end
   end
 
   def show
+    @game = Game.find(params[:id])
+    @comments = @game.comments
     @comment = Comment.new
-    @comments = @game.comments.includes(:user)
+
   end
 
   def update
